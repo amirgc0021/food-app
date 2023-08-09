@@ -8,8 +8,6 @@ export default async function Home() {
 
 	return (
 		<main className={styles.main}>
-			<h1>amir</h1>
-
 			<div className={styles.catList}>
 				{categories.map(category => <Category key={category.id?.toString() || category.slug} category={category} />)}
 			</div>

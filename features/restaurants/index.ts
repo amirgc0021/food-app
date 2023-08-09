@@ -1,6 +1,9 @@
 import MealItem from "./components/mealItem/MealItem";
 import MenuCategoryRow from "./components/menuCategoryRow/MenuCategoryRow";
-export{
+import RestaurantCard from "./components/restaurantCard/RestaurantCard";
+
+export {
 	MealItem,
-	MenuCategoryRow
+	MenuCategoryRow,
+	RestaurantCard
 }

@@ -1,0 +1,10 @@
+.page{
+	max-width: 1080px;
+	margin: auto;
+}
+
+.gridList {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
