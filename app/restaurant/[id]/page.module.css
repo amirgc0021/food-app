@@ -1,0 +1,43 @@
+.page{
+	max-width: 1080px;
+	margin: auto;
+}
+
+.title{
+	margin: 0;
+}
+
+.rating{
+	margin-bottom: 3em;
+}
+
+.pageRow{
+	display: flex;
+	gap: 0 40px;
+}
+
+.listContainer{
+	min-width: 180px;
+}
+
+.menuItemsList{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menuItemsList > li{
+	padding: .4em .6em;
+	border-radius: 5px;
+}
+
+.menuItemsList > li:hover{
+	background-color: var(--color-3);
+}
+
+.content{
+	flex-grow: 1;
+}

@@ -21,3 +21,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button{
+	cursor: pointer;
+	text-align: inherit;
+}

@@ -1,0 +1,27 @@
+.item{
+	background: none;
+	border: none;
+	border-radius: 8px;
+	box-shadow: var(--color-3) 0px 0px 0px 2px, var(--color-3) 0px 1px 5px 0px;
+	padding: 0;
+}
+
+.inner{
+	display: flex;
+}
+.info{
+	padding: 10px;
+}
+
+.info :is(h3, p){
+	margin: 0;
+}
+
+.info h3{
+	margin-block-end: .5em ;
+}
+
+.info p {
+	line-height: 1.45em;
+	-webkit-line-clamp: 3;
+}

@@ -1,0 +1,27 @@
+.details{
+	margin-bottom: 20px;
+}
+
+.details:last-child{
+margin: 0;
+}
+
+.details summary{
+	list-style: none;
+	margin-bottom: 1.5em;
+	/* border-bottom: 1px solid #000; */
+}
+
+.details summary::-webkit-details-marker {
+  display:none;
+}
+
+.title, .desc{
+	margin: 0;
+}
+
+.mealsContainer{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 15px;
+}
