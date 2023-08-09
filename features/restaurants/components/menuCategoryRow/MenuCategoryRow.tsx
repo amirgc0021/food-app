@@ -9,7 +9,7 @@ type Props = {
 
 export default function MenuCategoryRow({ menuItem }: Props) {
 	return (
-		<details className={styles.details}>
+		<details className={styles.details} open>
 			<summary>
 				<h2 className={styles.title}>{menuItem.name}</h2>
 				<p className={styles.desc}>{menuItem.description}</p>
