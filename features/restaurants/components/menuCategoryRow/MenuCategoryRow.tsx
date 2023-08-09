@@ -16,7 +16,7 @@ export default function MenuCategoryRow({ menuItem }: Props) {
 			</summary>
 
 			<div className={styles.mealsContainer}>
-				{menuItem.meals.map(meal => <MealItem meal={meal} />)}
+				{menuItem.meals.map(meal => <MealItem key={meal._id?.toString() || meal.name} meal={meal} />)}
 			</div>
 		</details>
 	)

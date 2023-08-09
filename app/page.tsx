@@ -7,11 +7,11 @@ export default async function Home() {
 	const categories = await getCategories();
 
 	return (
-		<main className={styles.main}>
+		<div>
 			<div className={styles.catList}>
 				{categories.map(category => <Category key={category.id?.toString() || category.slug} category={category} />)}
 			</div>
-		</main>
+		</div>
 	)
 }
 

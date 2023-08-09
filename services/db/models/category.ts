@@ -2,14 +2,14 @@
 import { ObjectId } from "mongodb";
 
 export interface M_Category {
-	id?: ObjectId,
+	_id?: ObjectId,
 	name: string,
 	slug: string,
 	img: string
 }
 
 export interface M_Restaurant {
-	id?: ObjectId,
+	_id?: ObjectId,
 	name: string,
 	img: string,
 	slug: string,
@@ -20,7 +20,7 @@ export interface M_Restaurant {
 }
 
 export interface M_MenuCategories {
-	id?: ObjectId,
+	_id?: ObjectId,
 	name: string,
 	description: string,
 	active: boolean,
@@ -29,7 +29,7 @@ export interface M_MenuCategories {
 }
 
 export interface M_Meal {
-	id?: ObjectId,
+	_id?: ObjectId,
 	name: string,
 	description: string,
 	price: {
@@ -37,5 +37,6 @@ export interface M_Meal {
 		pickup: number
 	}
 	active: boolean,
-	img: string
+	img: string,
+	choices_id?: ObjectId[]
 }

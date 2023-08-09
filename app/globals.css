@@ -1,4 +1,4 @@
-:root{
+:root {
 	--text-color: #000;
 	--color-1: #142328;
 	--color-2: #FFE3AC;
@@ -8,21 +8,35 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+	max-width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
+	margin: 0;
 }
 
-body{
+body {
 	color: var(--text-color);
 	background-color: var(--bg-color);
+	display: flex;
+	flex-direction: column;
+}
+
+main{
+	flex: 1;
+}
+
+.websiteWidth {
+	max-width: 1080px;
+	width: 1080px;
+	margin: 0 auto;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
-button{
+button {
 	cursor: pointer;
 	text-align: inherit;
 }

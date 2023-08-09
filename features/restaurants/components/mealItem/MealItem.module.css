@@ -2,12 +2,14 @@
 	background: none;
 	border: none;
 	border-radius: 8px;
+	overflow: hidden;
 	box-shadow: var(--color-3) 0px 0px 0px 2px, var(--color-3) 0px 1px 5px 0px;
 	padding: 0;
 }
 
 .inner{
 	display: flex;
+	justify-content: space-between;
 }
 .info{
 	padding: 10px;

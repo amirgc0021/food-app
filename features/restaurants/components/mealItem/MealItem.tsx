@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import styles from "./MealItem.module.css";
 import type { M_Meal } from '@/services/db/models/category';
@@ -7,8 +8,13 @@ type Props = {
 }
 
 export default function MealItem({ meal }: Props) {
+	const test = () => {
+		const event = new CustomEvent("test", {detail: {mealID: meal.choices_id}});
+		document.dispatchEvent(event);
+	}
+
 	return (
-		<button className={styles.item}>
+		<button className={styles.item} onClick={test}>
 			<div className={styles.inner}>
 				
 				<div className={styles.info}>
