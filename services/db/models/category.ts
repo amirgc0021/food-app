@@ -40,3 +40,17 @@ export interface M_Meal {
 	img: string,
 	choices_id?: ObjectId[]
 }
+
+export interface M_Choices {
+	_id?: ObjectId,
+	name: string,
+	max_choices: number,
+	min_choices: number,
+	option_list: M_Choice_item[],
+}
+
+export interface M_Choice_item {
+	name: string,
+	price: number,
+	active: boolean,
+}

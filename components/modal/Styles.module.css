@@ -1,0 +1,52 @@
+.dialog{
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	padding: 0;
+}
+
+.dialog[open] {
+	animation: show .2s ease normal;
+}
+
+.dialog::backdrop {
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.dialog[open]::backdrop {
+	animation: show-backdrop .3s ease normal;
+}
+
+.dialog.hide {
+	animation: hide 1s ease normal;
+}
+
+.dialogInner{
+	padding: 1em;
+}
+
+@keyframes show{
+	from {
+			transform: translateY(40%);
+	}
+	to {
+			transform: translateY(0%);
+	}
+}
+@keyframes hide{
+	to {
+			transform: translateY(-110%);
+	}
+}
+
+@keyframes show-backdrop {
+	from {
+			opacity: 0;
+	}
+	to {
+			opacity: 1;
+	}
+}
+
+
+

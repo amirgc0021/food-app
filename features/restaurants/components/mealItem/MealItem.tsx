@@ -1,20 +1,22 @@
-"use client"
+"use client";
 import React from 'react'
 import styles from "./MealItem.module.css";
 import type { M_Meal } from '@/services/db/models/category';
+import { ObjectId } from 'mongodb';
 
 type Props = {
-	meal: M_Meal
+	meal: M_Meal,
+	setItem: (meal: M_Meal) => void
 }
 
-export default function MealItem({ meal }: Props) {
-	const test = () => {
-		const event = new CustomEvent("test", {detail: {mealID: meal.choices_id}});
-		document.dispatchEvent(event);
+export default function MealItem({ meal, setItem }: Props) {
+	
+	const selectMeal = () => {
+		setItem(meal)
 	}
 
 	return (
-		<button className={styles.item} onClick={test}>
+		<button className={styles.item} onClick={selectMeal}>
 			<div className={styles.inner}>
 				
 				<div className={styles.info}>

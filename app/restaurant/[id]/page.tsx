@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 
 import db from "@/services/db";
 import type { M_MenuCategories, M_Restaurant } from '@/services/db/models/category';
-import { MenuCategoryRow } from '@/features/restaurants';
-import ClientComponent from '@/components/ClientComponent';
+import { MealGrid, MenuCategoryRow } from '@/features/restaurants';
+import Link from 'next/link';
 
 type Props = {
 	params: { id: string }
@@ -22,26 +22,30 @@ export default async function RestaurantPage({ params }: Props) {
 
 	return (
 		<div className={styles.page}>
-			<img src={data.img} alt={data.name} />
-			<h1 className={styles.title}>{data.name}</h1>
-			<div className={styles.rating}>
-				{data.rating.star} ({data.rating.qut} ratings)
+			<div>
+				<img src={data.img} alt={data.name} />
+				<h1 className={styles.title}>{data.name}</h1>
+				<div className={styles.rating}>
+					{data.rating.star} ({data.rating.qut} ratings)
+				</div>
 			</div>
 
-			<ClientComponent>
+			<div className={styles.pageRow}>
+				<aside className={styles.listContainer}>
+					<ul className={styles.menuItemsList}>
+						{menuItems.map(item => (
+							<li>
+								<Link href={`#${item.name}`}>
+									{item.name}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</aside>
 
-				<div className={styles.pageRow}>
-					<aside className={styles.listContainer}>
-						<ul className={styles.menuItemsList}>
-							{menuItems.map(item => <li>{item.name}</li>)}
-						</ul>
-					</aside>
+				<MealGrid menuItems={menuItems} />
 
-					<div className={styles.content}>
-						{menuItems.map(item => <MenuCategoryRow menuItem={item} />)}
-					</div>
-				</div>
-			</ClientComponent>
+			</div>
 		</div>
 	)
 }
@@ -54,5 +58,5 @@ const getRestaurantData = async (restaurantID: string) => {
 
 	const menuItems = await menuCategoriesCollection.find({ _id: { $in: data.food_category }, active: true }).toArray();
 
-	return{ data, menuItems };
+	return { data, menuItems };
 }

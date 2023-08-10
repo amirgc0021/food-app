@@ -25,14 +25,11 @@
 }
 
 .menuItemsList > li{
+	cursor: pointer;
 	padding: .4em .6em;
 	border-radius: 5px;
 }
 
 .menuItemsList > li:hover{
 	background-color: var(--color-3);
-}
-
-.content{
-	flex-grow: 1;
 }
