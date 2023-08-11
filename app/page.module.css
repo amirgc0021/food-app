@@ -2,5 +2,12 @@
 	display: flex;
 	gap: 20px;
 	padding: 10px 0;
-	overflow: scroll;
+	overflow-x: scroll;
+}
+
+.gridList{
+	margin-top: 60px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
 }

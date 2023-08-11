@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import styles from "./Category.module.css";
 import { M_Category } from '@/services/db/models/category';

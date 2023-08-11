@@ -12,7 +12,7 @@ type Props = {
 export default function MealItem({ meal, setItem }: Props) {
 	
 	const selectMeal = () => {
-		setItem(meal)
+		setItem(meal);
 	}
 
 	return (
