@@ -19,7 +19,7 @@ export interface M_Restaurant {
 	rating: { star: number, qut: number }
 }
 
-export interface M_MenuCategories {
+export interface M_MealCategories {
 	_id?: ObjectId,
 	name: string,
 	description: string,

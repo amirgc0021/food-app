@@ -14,7 +14,7 @@ export default function NavBar({ }: Props) {
 					</Link>
 				</div>
 				<div>
-					<input type='text' />
+					<input type='text' placeholder='Search for food, alcohol...' />
 				</div>
 			</div>
 		</header>

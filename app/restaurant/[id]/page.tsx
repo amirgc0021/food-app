@@ -2,8 +2,8 @@ import React from 'react';
 import styles from "./page.module.css";
 
 import db from "@/services/db";
-import type { M_MenuCategories, M_Restaurant } from '@/services/db/models/category';
-import { MealGrid, MenuCategoryRow } from '@/features/restaurants';
+import type { M_MealCategories, M_Restaurant } from '@/services/db/models/category';
+import { MealGrid } from '@/features/restaurants';
 import Link from 'next/link';
 
 type Props = {
@@ -51,12 +51,12 @@ export default async function RestaurantPage({ params }: Props) {
 }
 
 const getRestaurantData = async (restaurantID: string) => {
-	const [restaurantsCollection, menuCategoriesCollection] = await Promise.all([db<M_Restaurant>("restaurants"), db<M_MenuCategories>("menuCategories")]);
+	const [restaurantsCollection, mealCategoriesCollection] = await Promise.all([db<M_Restaurant>("restaurants"), db<M_MealCategories>("mealCategories")]);
 
 	const data = await restaurantsCollection.findOne({ slug: restaurantID });
 	if (!data) throw new Error("Restaurant not found");
 
-	const menuItems = await menuCategoriesCollection.find({ _id: { $in: data.food_category }, active: true }).toArray();
+	const menuItems = await mealCategoriesCollection.find({ _id: { $in: data.food_category }, active: true }).toArray();
 
 	return { data, menuItems };
 }

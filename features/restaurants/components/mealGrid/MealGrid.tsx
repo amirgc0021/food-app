@@ -3,14 +3,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from "./MealGrid.module.css";
 
-import { M_Meal, M_MenuCategories } from '@/services/db/models/category';
+import { M_Meal, M_MealCategories } from '@/services/db/models/category';
 import { MenuCategoryRow } from '../..';
 import ChoicesPopup from '@/features/choicesSelector/components/choicesPopup/ChoicesPopup';
-import useModal from '@/components/modal/useModal';
 import Modal from '@/components/modal/Modal';
 
 type Props = {
-	menuItems: M_MenuCategories[]
+	menuItems: M_MealCategories[]
 }
 
 export default function MealGrid({ menuItems }: Props) {

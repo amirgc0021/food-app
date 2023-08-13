@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from "./MenuCategoryRow.module.css";
-import { M_Meal, M_MenuCategories } from '@/services/db/models/category';
+import { M_Meal, M_MealCategories } from '@/services/db/models/category';
 import { MealItem } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
-	menuItem: M_MenuCategories,
+	menuItem: M_MealCategories,
 	setItem: (m: M_Meal) => void
 }
 
