@@ -11,6 +11,6 @@ export default async function main<T extends Document>(collection: string) {
 		connection = await client.connect();
 	}
 	// Use connect method to connect to the server
-	const db = connection.db('food-app');
+	const db = connection.db('feed-me');
 	return db.collection<T>(collection);
 };

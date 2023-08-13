@@ -5,6 +5,7 @@ import db from "@/services/db";
 import type { M_MealCategories, M_Restaurant } from '@/services/db/models/category';
 import { MealGrid } from '@/features/restaurants';
 import Link from 'next/link';
+import Rating from '@/components/rating/Rating';
 
 type Props = {
 	params: { id: string }
@@ -22,13 +23,11 @@ export default async function RestaurantPage({ params }: Props) {
 
 	return (
 		<div className={styles.page}>
-			<div>
+			<header className={styles.header}>
 				<img src={data.img} alt={data.name} />
 				<h1 className={styles.title}>{data.name}</h1>
-				<div className={styles.rating}>
-					{data.rating.star} ({data.rating.qut} ratings)
-				</div>
-			</div>
+				<Rating rating={data.rating} />
+			</header>
 
 			<div className={styles.pageRow}>
 				<aside className={styles.listContainer}>
