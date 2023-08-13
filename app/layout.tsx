@@ -25,7 +25,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<NavBar />
-				<main className="websiteWidth">
+				<main className="websiteWidth navSpace">
 					{children}
 				</main>
 				<Footer />

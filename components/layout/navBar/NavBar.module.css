@@ -1,8 +1,15 @@
 .inner{
+	position: fixed;
+	width: 100%;
+	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 5px 20px;
+	box-shadow: -1px 2px 9px -1px rgba(0,0,0,0.4);
+	z-index: 100;
+	height: var(--menu-height);
+	box-sizing: border-box;
 }
 
 .imgContainer{

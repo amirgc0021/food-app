@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react'
 import styles from "./Search.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { Throttle } from '@/utils/utils';
-import type { M_Restaurant } from '@/services/db/models/category';
 import { ResultCard } from '../..';
 import { shortRestaurant } from '@/features/restaurants/types';
 

@@ -3,3 +3,11 @@
   -webkit-box-orient: vertical;  
   overflow: hidden;
 }
+
+.navSpace{
+	padding-top: calc(var(--menu-height) + 40px);
+}
+
+button svg {
+		vertical-align: middle !important;
+}
