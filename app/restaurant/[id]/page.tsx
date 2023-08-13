@@ -25,7 +25,7 @@ export default async function RestaurantPage({ params }: Props) {
 		<div className={styles.page}>
 			<header className={styles.header}>
 				<img src={data.img} alt={data.name} />
-				<h1 className={styles.title}>{data.name}</h1>
+				<h1>{data.name}</h1>
 				<Rating rating={data.rating} />
 			</header>
 

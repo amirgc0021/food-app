@@ -10,17 +10,23 @@ type Props = {
 }
 
 export default function ChoicesPopup({ closeModal, popupData }: Props) {
+
+	const price = Intl.NumberFormat("es-us", { style: "currency", currency: "USD" }).format(popupData.price.delivery);
+
 	return (
 		<div className={styles.popupWrapper}>
 			<div className={styles.imageContainer}>
 				<img src={popupData.img} />
 			</div>
-			<h2 className={styles.title}>
-				{popupData.name}
-			</h2>
 
-			<div className={styles.price}>
-				<span>{popupData.price.delivery}</span>
+			<div className={styles.mealData}>
+				<h2 className={styles.title}>
+					{popupData.name}
+				</h2>
+
+				<div className={styles.price}>
+					<span>{price}</span>
+				</div>
 			</div>
 
 			<p className={styles.description}>{popupData.description}</p>
