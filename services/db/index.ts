@@ -5,7 +5,9 @@ const url = 'mongodb://127.0.0.1:27017';
 const client = new MongoClient(process.env.MONGO_PASSWORD_CONNECTION as string);
 let connection: MongoClient | null = null;
 
-export default async function main<T extends Document>(collection: string) {
+type collections = "restaurants" | "categories" | "mealCategories" | "mealChoices"
+
+export default async function main<T extends Document>(collection: collections) {
 	if (!connection) {
 		console.log('Connected successfully to server');
 		connection = await client.connect();

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./NavBar.module.css";
 import Link from 'next/link';
+import {Search} from '../../../features/search';
 
 type Props = {}
 
@@ -14,8 +15,9 @@ export default function NavBar({ }: Props) {
 					</Link>
 				</div>
 				<div>
-					<input type='text' placeholder='Search for food, alcohol...' />
+					<Search />
 				</div>
+				<div />
 			</div>
 		</header>
 	)
