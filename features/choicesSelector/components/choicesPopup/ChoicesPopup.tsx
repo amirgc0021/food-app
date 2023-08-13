@@ -5,17 +5,29 @@ import styles from "./ChoicesPopup.module.css";
 import { M_Meal } from '@/services/db/models/category';
 
 type Props = {
-	closeModal: any,
+	closeModal: () => void,
 	popupData: M_Meal
 }
 
 export default function ChoicesPopup({ closeModal, popupData }: Props) {
-	if (!popupData) return null;
-
 	return (
 		<div className={styles.popupWrapper}>
-			{popupData.name}
-			<button onClick={closeModal}>exit</button>
+			<div className={styles.imageContainer}>
+				<img src={popupData.img} />
+			</div>
+			<h2 className={styles.title}>
+				{popupData.name}
+			</h2>
+
+			<div className={styles.price}>
+				<span>{popupData.price.delivery}</span>
+			</div>
+
+			<p className={styles.description}>{popupData.description}</p>
+
+			<div>
+				<button className={styles.selectBtn} onClick={closeModal}>Select Item</button>
+			</div>
 		</div>
 	)
 }
