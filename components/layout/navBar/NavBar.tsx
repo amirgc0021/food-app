@@ -14,7 +14,7 @@ export default function NavBar({ }: Props) {
 				<div>
 					<div className={styles.imgContainer}>
 						<Link href="/">
-							<img src="/assets/logo.png" />
+							<img src="/assets/logo.png" alt="Feed me logo" />
 						</Link>
 					</div>
 				</div>

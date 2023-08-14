@@ -4,7 +4,7 @@ import styles from "./Styles.module.css";
 // ComponentType<T>
 export default function WithPortal<T>(Component: any, closeModal: any) {
 
-	return forwardRef((props: T, dialogRef: any) => {
+	const Comp = (props: T, dialogRef: any) => {
 
 		const onModalClicked = (event: React.MouseEvent<HTMLDialogElement>) => {
 			if(event.target === dialogRef.current) closeModal()
@@ -17,5 +17,7 @@ export default function WithPortal<T>(Component: any, closeModal: any) {
 				</div>
 			</dialog>
 		)
-	});
+	};
+
+	return forwardRef(Comp)
 }

@@ -33,7 +33,7 @@ export default async function RestaurantPage({ params }: Props) {
 				<aside className={styles.listContainer}>
 					<ul className={styles.menuItemsList}>
 						{menuItems.map(item => (
-							<li>
+							<li key={item.name}>
 								<Link href={`#${item.name}`}>
 									{item.name}
 								</Link>

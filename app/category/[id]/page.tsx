@@ -27,7 +27,7 @@ export default async function CategoryPage({ params }: Props) {
 			</h1>
 
 			<div className={styles.gridList}>
-				{restaurantsList.map(item => <RestaurantCard restaurant={item} />)}
+				{restaurantsList.map(item => <RestaurantCard key={item.slug} restaurant={item} />)}
 			</div>
 		</div>
 	)

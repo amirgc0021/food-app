@@ -34,5 +34,5 @@
 }
 
 .menuItemsList > li:hover{
-	background-color: var(--color-3);
+	background-color: var(--color-2);
 }
