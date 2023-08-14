@@ -1,5 +1,6 @@
 "use client";
-import React, { ComponentType, forwardRef, useRef } from 'react';
+
+import React, { forwardRef } from 'react';
 import styles from "./Styles.module.css";
 // ComponentType<T>
 export default function WithPortal<T>(Component: any, closeModal: any) {
