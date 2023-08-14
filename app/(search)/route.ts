@@ -1,6 +1,5 @@
-import db from '@/services/db'
+import db from '@/services/db';
 import { M_Restaurant } from '@/services/db/models/category';
-import { ObjectId } from 'mongodb';
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
