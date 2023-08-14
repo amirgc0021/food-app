@@ -6,7 +6,7 @@
 }
 
 .dialog[open] {
-	animation: show .2s ease normal;
+	animation: show .3s;
 }
 
 .dialog::backdrop {
@@ -14,10 +14,8 @@
 }
 
 .dialog[open]::backdrop {
-	animation: show-backdrop .3s ease normal;
+	animation: show-backdrop .3s;
 }
-
-
 
 .dialogInner {
 	padding: 1em;

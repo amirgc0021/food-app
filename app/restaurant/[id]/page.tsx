@@ -55,7 +55,7 @@ const getRestaurantData = async (restaurantID: string) => {
 	const data = await restaurantsCollection.findOne({ slug: restaurantID });
 	if (!data) throw new Error("Restaurant not found");
 
-	const menuItems = await mealCategoriesCollection.find({ _id: { $in: data.food_category }, active: true }).toArray();
+	const menuItems = await mealCategoriesCollection.find({ _id: { $in: data.food_category }, active: true }, {projection: {_id: 0}}).toArray();
 
 	return { data, menuItems };
 }

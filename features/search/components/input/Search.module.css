@@ -1,42 +1,58 @@
 .wrapper{
-	position: relative;
+	padding: 0 10%;
 }
 
 .inputWrapper{
 	position: relative;
-	background-color: var(--color-2);
-	border-radius: 12px;
-	padding: .4em .8em;
 	font-size: 18px;
 	display: flex;
 	align-items: center;
 }
 
+.searchIcon, .clearInput{
+	position: absolute;
+	width: 40px;
+	text-align: center;
+}
+
+.searchIcon{
+	left: 0;
+}
+
 .input{
+	width: 100%;
+	padding: .55em 40px;
+	background-color: var(--color-2);
 	font-size: inherit;
 	border: none;
-	padding-inline-start: .8em;
-	background-color: transparent;
+	border-radius: 12px;
 }
 
 .input:focus{
 	outline: none;
 }
 
-.clearBtn{
-	visibility: hidden;
-	vertical-align: middle;
+.clearInput{
+	display: block;
+	padding: .4em;
+	box-sizing: border-box;
+	right: 0;
 }
 
-.clearBtn.empty{
-	visibility: visible;
+.clearInput button{
+	display: block;
+	width: 100%;
+}
+
+.input[value=""] + .clearInput{
+	display: none;
 }
 
 .restaurantsList{
 	width: 30em;
 	position: absolute;
-	bottom: 0;
-	transform: translateY(105%);
+	/* bottom: 0; */
+	transform: translateY(10px);
 	display: flex;
 	flex-direction: column;
 	gap: 10px;

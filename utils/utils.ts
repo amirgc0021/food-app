@@ -3,9 +3,9 @@ type callBackFunc = (...args: any[]) => any;
 type throttleFunctionType = (func: callBackFunc, delay: number) => (...args: any[]) => callBackFunc;
 
 export const Throttle: throttleFunctionType = (func, delay) => {
-
 	// Previously called time of the function
 	let prev = 0;
+
 	return (...args: string[]) => {
 		// Current called time of the function
 		let now = new Date().getTime();

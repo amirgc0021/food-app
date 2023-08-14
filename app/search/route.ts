@@ -9,8 +9,6 @@ export async function GET(request: Request) {
 
 	if (!restaurantName) return "";
 
-
-
 	const data = await restaurantCollection.find(
 		{ name: { $regex: `${restaurantName}`, $options: 'i' } },
 		{
@@ -20,11 +18,6 @@ export async function GET(request: Request) {
 				address: 0
 			}
 		}).limit(5).toArray();
-		console.log(data)
-
-	// const idsList = ids.split(",").map(item => new ObjectId(item));
-	// if (!idsList.length) return ""
-
 
 	return NextResponse.json({ data })
 }

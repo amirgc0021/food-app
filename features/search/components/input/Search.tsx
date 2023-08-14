@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import styles from "./Search.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faX } from '@fortawesome/free-solid-svg-icons';
 import { ResultCard } from '../..';
 import { shortRestaurant } from '@/features/restaurants/types';
+import { Debounce } from '@/utils/utils';
 
 
 export default function Search() {
@@ -13,16 +14,24 @@ export default function Search() {
 	const [restaurantsList, setRestaurantsList] = useState<shortRestaurant[]>([])
 
 	useEffect(() => {
-		if(text === "") {
-			return setRestaurantsList([])
+		if (text === "") {
+			return setRestaurantsList([]);
+		} else {
+			debounce(text)
 		}
+
+	}, [text]);
+
+	const onSerach = (text: string) => {
+
 		fetch(`/search?q=${text}`)
 			.then(res => res.json())
 			.then(res => {
 				setRestaurantsList(res.data)
-				console.log(res)
 			})
-	}, [text])
+	}
+
+	const debounce = useMemo(() => Debounce(onSerach, 500), []);
 
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,12 +41,17 @@ export default function Search() {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.inputWrapper}>
-				<div>
+
+				<div className={styles.searchIcon}>
 					<FontAwesomeIcon icon={faMagnifyingGlass} />
 				</div>
 				<input className={styles.input} type='text' value={text} placeholder='Search for food, alcohol...' onChange={handleChange} />
 
-				<button onClick={() => setText("")} className={`${styles.clearBtn} ${text !== "" ? styles.empty : ""}`}><FontAwesomeIcon icon={faCircleXmark} /></button>
+				<span className={styles.clearInput}>
+					<button onClick={() => setText("")} className={styles.clearBtn}>
+						<FontAwesomeIcon icon={faX} size='sm' />
+						</button>
+				</span>
 			</div>
 
 			{restaurantsList.length > 0 && <div className={styles.restaurantsList}>

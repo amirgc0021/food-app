@@ -1,16 +1,15 @@
-import { MongoClient, Document } from 'mongodb';
+import { MongoClient } from 'mongodb';
+import type { Document } from 'mongodb';
 
-// Connection URL
-const url = 'mongodb://127.0.0.1:27017';
+type collections = "restaurants" | "categories" | "mealCategories" | "mealChoices";
+
 const client = new MongoClient(process.env.MONGO_PASSWORD_CONNECTION as string);
 let connection: MongoClient | null = null;
 
-type collections = "restaurants" | "categories" | "mealCategories" | "mealChoices"
-
-export default async function main<T extends Document>(collection: collections) {
+export default async function connect<T extends Document>(collection: collections) {
 	if (!connection) {
-		console.log('Connected successfully to server');
 		connection = await client.connect();
+		// console.log('Connected successfully to server');
 	}
 	// Use connect method to connect to the server
 	const db = connection.db('feed-me');
