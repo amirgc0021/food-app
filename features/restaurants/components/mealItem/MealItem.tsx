@@ -3,8 +3,6 @@
 import React from 'react'
 import styles from "./MealItem.module.css";
 import type { M_Meal } from '@/services/db/models/category';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '@/services/redux/slices/CartSlice';
 
 type Props = {
 	meal: M_Meal,
@@ -12,11 +10,9 @@ type Props = {
 }
 
 export default function MealItem({ meal, setItem }: Props) {
-	const dispatch = useDispatch();
-
+	
 	const selectMeal = () => {
 		setItem(meal);
-		dispatch(addToCart(2))
 	}
 
 	return (

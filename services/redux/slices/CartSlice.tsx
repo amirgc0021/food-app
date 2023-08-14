@@ -1,7 +1,8 @@
+import { M_Meal } from "@/services/db/models/category";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type SliceState = {
-	cart: number[]
+	cart: M_Meal[]
 }
 
 const initialState: SliceState = { cart: [] }
@@ -10,7 +11,7 @@ export const slice = createSlice({
 	name: "cartSlice",
 	initialState,
 	reducers: {
-		addToCart: (state, action: PayloadAction<number>) => {
+		addToCart: (state, action: PayloadAction<M_Meal>) => {
 			state.cart.push(action.payload)
 		}
 	}

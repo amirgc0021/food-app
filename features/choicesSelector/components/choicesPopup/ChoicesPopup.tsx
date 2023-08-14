@@ -3,6 +3,8 @@
 import React from 'react'
 import styles from "./ChoicesPopup.module.css";
 import { M_Meal } from '@/services/db/models/category';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '@/services/redux/slices/CartSlice';
 
 type Props = {
 	closeModal: () => void,
@@ -10,8 +12,13 @@ type Props = {
 }
 
 export default function ChoicesPopup({ closeModal, popupData }: Props) {
-
+	const dispatch = useDispatch()
 	const price = Intl.NumberFormat("es-us", { style: "currency", currency: "USD" }).format(popupData.price.delivery);
+
+	const addItem = () => {
+		dispatch(addToCart(popupData))
+		closeModal()
+	}
 
 	return (
 		<div className={styles.popupWrapper}>
@@ -32,7 +39,7 @@ export default function ChoicesPopup({ closeModal, popupData }: Props) {
 			<p className={styles.description}>{popupData.description}</p>
 
 			<div>
-				<button className={styles.selectBtn} onClick={closeModal}>Select Item</button>
+				<button className={styles.selectBtn} onClick={addItem}>Select Item</button>
 			</div>
 		</div>
 	)
