@@ -22,12 +22,18 @@ export default function CartModal({ }: Props) {
 		return () => {
 			document.removeEventListener("cartDialogOpen", dialogOpen)
 		}
-	}, [])
+	}, []);
 
-	if (display === false) return null;
+	useEffect(() => {
+		const html = document.documentElement;
+
+		html.style.overflow = display ? "hidden" : "initial"
+	}, [display])
+
+	// if (display === false) return null;
 
 	return (
-		<div className={styles.wrapper}>
+		<div className={`${styles.wrapper} ${display ? styles.open : ""}`}>
 			<button className={styles.exitBtn} onClick={() => setDisplay(false)}><FontAwesomeIcon icon={faX} /></button>
 
 			<div className={styles.content}>
