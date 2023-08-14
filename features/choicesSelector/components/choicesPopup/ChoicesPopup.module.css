@@ -30,9 +30,9 @@
 }
 
 .selectBtn{
-	background-color: var(--color-1);
+	background-color: var(--color-2);
 	border: none;
-	color: #fff;
+	color: #000;
 	font-size: 22px;
 	border-radius: 8px;
 	padding: .4em 1em;

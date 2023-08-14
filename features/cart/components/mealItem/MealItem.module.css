@@ -1,0 +1,21 @@
+.wrapper{
+	display: flex;
+	gap: 20px;
+}
+
+.imgContainer{
+	width: 40%;
+}
+
+.imgContainer img{
+	width: 100%;
+}
+
+.infoContainer{
+	flex: 1;
+}
+
+.title{
+	font-size: 18px;
+	font-weight: 600;
+}

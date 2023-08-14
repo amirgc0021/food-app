@@ -8,6 +8,7 @@ import Footer from '@/components/layout/footer/Footer';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { ReduxProvider } from '@/services/redux';
+import { CartModal } from '@/features/cart';
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,6 +31,7 @@ export default function RootLayout({
 					<main className="websiteWidth navSpace">
 						{children}
 					</main>
+					<CartModal />
 					<Footer />
 				</ReduxProvider>
 			</body>

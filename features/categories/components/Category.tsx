@@ -7,12 +7,13 @@ type Props = {
 	category: M_Category
 }
 
-export default function Category({ category }: Props) {
+export default function CategoryCard({ category }: Props) {
+
 	return (
 		<div className={styles.wrapper}>
 			<Link href={`/category/${category.slug}`}>
 				<div className={styles.imgContainer}>
-					<img src={category.img} />
+					<img src={category.img} alt={category.name} />
 				</div>
 				<div className={styles.textContainer}>
 					<h3>{category.name}</h3>

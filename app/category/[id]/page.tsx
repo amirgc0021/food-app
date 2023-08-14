@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
 	}
 }
 
-export default async function RestaurantPage({ params }: Props) {
+export default async function CategoryPage({ params }: Props) {
 	const { categoryData, restaurantsList } = await getPageData(params.id);
 
 	return (

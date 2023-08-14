@@ -21,6 +21,13 @@
 	padding: 1em;
 }
 
+.exitBtn{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 22px;
+}
+
 @keyframes show {
 	from {
 		opacity: 0;

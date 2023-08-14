@@ -1,4 +1,4 @@
-import { Category } from '@/features/categories';
+import { CategoryCard } from '@/features/categories';
 import styles from './page.module.css';
 import db from "@/services/db";
 import { M_Restaurant, type M_Category } from '@/services/db/models/category';
@@ -10,7 +10,7 @@ export default async function Home() {
 	return (
 		<div>
 			<div className={styles.catList}>
-				{categories.map(category => <Category key={category.slug} category={category} />)}
+				{categories.map(category => <CategoryCard key={category.slug} category={category} />)}
 			</div>
 
 			<div className={styles.gridList}>

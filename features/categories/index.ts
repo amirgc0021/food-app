@@ -1,5 +1,5 @@
-import Category from "./components/Category";
+import CategoryCard from "./components/Category";
 
 export{
-	Category
+	CategoryCard
 }
