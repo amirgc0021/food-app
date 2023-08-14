@@ -1,3 +1,9 @@
 .btn{
 	font-size: 20px;
 }
+
+.btn span{
+	font-size: .85em;
+	margin-left: .1em;
+	vertical-align: middle;
+}

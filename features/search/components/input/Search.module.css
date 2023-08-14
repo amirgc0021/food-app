@@ -5,6 +5,7 @@
 .inputWrapper{
 	position: relative;
 	font-size: 18px;
+	width: 350px;
 	display: flex;
 	align-items: center;
 }

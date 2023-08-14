@@ -1,8 +1,10 @@
 "use client";
+
 import React from 'react'
 import styles from "./MealItem.module.css";
 import type { M_Meal } from '@/services/db/models/category';
-import { ObjectId } from 'mongodb';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '@/services/redux/slices/CartSlice';
 
 type Props = {
 	meal: M_Meal,
@@ -10,15 +12,17 @@ type Props = {
 }
 
 export default function MealItem({ meal, setItem }: Props) {
-	
+	const dispatch = useDispatch();
+
 	const selectMeal = () => {
 		setItem(meal);
+		dispatch(addToCart(2))
 	}
 
 	return (
 		<button className={styles.item} onClick={selectMeal}>
 			<div className={styles.inner}>
-				
+
 				<div className={styles.info}>
 					<h3>{meal.name}</h3>
 					<p className='cutLines'>{meal.description}</p>
