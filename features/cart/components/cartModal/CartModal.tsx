@@ -34,15 +34,25 @@ export default function CartModal({ }: Props) {
 
 	return (
 		<div className={`${styles.wrapper} ${display ? styles.open : ""}`}>
-			<button className={styles.exitBtn} onClick={() => setDisplay(false)}><FontAwesomeIcon icon={faX} /></button>
+			<div className={styles.inner}>
 
-			<div className={styles.content}>
-				<h2>Your order</h2>
+				<div className={styles.header}>
+					<button className={styles.exitBtn} onClick={() => setDisplay(false)}><FontAwesomeIcon icon={faX} /></button>
+					<h2>Your order</h2>
+				</div>
 
-				<div className={styles.itemsList}>
-					<ul>
-						{cartItems.map(item => <li><MealItem meal={item} /></li>)}
-					</ul>
+				<div className={styles.content}>
+					<div className={styles.itemsList}>
+						<ul>
+							{cartItems.map(item => <li><MealItem meal={item} /></li>)}
+						</ul>
+					</div>
+				</div>
+				
+				<div className={styles.placeOrderBtn}>
+					<div>
+						<button>Place Order</button>
+					</div>
 				</div>
 			</div>
 		</div>
